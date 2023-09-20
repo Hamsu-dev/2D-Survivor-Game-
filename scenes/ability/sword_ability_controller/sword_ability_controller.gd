@@ -23,6 +23,7 @@ func on_time_timeout():
 	enemies.sort_custom(func(a:Node2D, b:Node2D):
 		var a_distance = a.global_position.distance_squared_to(player.global_position)
 		var b_distance = b.global_position.distance_squared_to(player.global_position)
+		return a_distance < b_distance
 	)
 
 	var sword_instance = sword_ability.instantiate() as Node2D
