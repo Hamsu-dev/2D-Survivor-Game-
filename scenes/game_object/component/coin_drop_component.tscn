@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkd2ud3r0l1he"]
+
+[ext_resource type="Script" path="res://scenes/game_object/component/coin_drop_component.gd" id="1_mj0do"]
+[ext_resource type="PackedScene" uid="uid://xrtjrjemvdd0" path="res://scenes/game_object/experience_coin/experience_coin.tscn" id="2_cen3u"]
+
+[node name="CoinDropComponent" type="Node"]
+script = ExtResource("1_mj0do")
+coin_scene = ExtResource("2_cen3u")

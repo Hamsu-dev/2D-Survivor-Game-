@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ch5uggqem8dsc"]
+[gd_scene load_steps=8 format=3 uid="uid://ch5uggqem8dsc"]
 
 [ext_resource type="PackedScene" uid="uid://bqnupvfdws6nu" path="res://scenes/manager/enemy_manager.tscn" id="1_am315"]
 [ext_resource type="PackedScene" uid="uid://chhdrrfomojgo" path="res://scenes/game_object/player/player.tscn" id="1_kyjou"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://ctmniisshgu0i" path="res://scenes/game_object/game_camera/game_camera.tscn" id="1_xy7xj"]
 [ext_resource type="PackedScene" uid="uid://cb7vm6dw5gsle" path="res://scenes/manager/arena_time_manager.tscn" id="2_jo76j"]
 [ext_resource type="PackedScene" uid="uid://cva4r1lgkail" path="res://scenes/manager/experience_manager.tscn" id="4_abnmw"]
-[ext_resource type="PackedScene" uid="uid://xrtjrjemvdd0" path="res://scenes/game_object/experience_coin/experience_coin.tscn" id="7_rdyka"]
 
 [node name="Main" type="Node"]
 
@@ -29,36 +28,3 @@ layer_0/tile_data = PackedInt32Array(1966134, 655363, 1, 1900598, 655363, 1, 183
 
 [node name="Player" parent="." instance=ExtResource("1_kyjou")]
 position = Vector2(313, 174)
-
-[node name="ExperienceCoin" parent="." instance=ExtResource("7_rdyka")]
-position = Vector2(585, 52)
-
-[node name="ExperienceCoin2" parent="." instance=ExtResource("7_rdyka")]
-position = Vector2(519, 262)
-
-[node name="ExperienceCoin3" parent="." instance=ExtResource("7_rdyka")]
-position = Vector2(141, 225)
-
-[node name="ExperienceCoin4" parent="." instance=ExtResource("7_rdyka")]
-position = Vector2(528, 146)
-
-[node name="ExperienceCoin5" parent="." instance=ExtResource("7_rdyka")]
-position = Vector2(105, 113)
-
-[node name="ExperienceCoin6" parent="." instance=ExtResource("7_rdyka")]
-position = Vector2(398, 43)
-
-[node name="ExperienceCoin7" parent="." instance=ExtResource("7_rdyka")]
-position = Vector2(228, 97)
-
-[node name="ExperienceCoin8" parent="." instance=ExtResource("7_rdyka")]
-position = Vector2(257, 266)
-
-[node name="ExperienceCoin9" parent="." instance=ExtResource("7_rdyka")]
-position = Vector2(389, 235)
-
-[node name="ExperienceCoin10" parent="." instance=ExtResource("7_rdyka")]
-position = Vector2(427, 325)
-
-[node name="ExperienceCoin11" parent="." instance=ExtResource("7_rdyka")]
-position = Vector2(80, 311)
