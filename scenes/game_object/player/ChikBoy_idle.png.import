@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dd58t6bb2ikeo"
-path="res://.godot/imported/basic_enemy.png-bcb3ae4d01d42218b1191142bc5bacbb.ctex"
+uid="uid://c4nf1fm8k6rgy"
+path="res://.godot/imported/ChikBoy_idle.png-0efac3f78afb5387b0656ea070a59bdf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/basic_enemy/basic_enemy.png"
-dest_files=["res://.godot/imported/basic_enemy.png-bcb3ae4d01d42218b1191142bc5bacbb.ctex"]
+source_file="res://scenes/game_object/player/ChikBoy_idle.png"
+dest_files=["res://.godot/imported/ChikBoy_idle.png-0efac3f78afb5387b0656ea070a59bdf.ctex"]
 
 [params]
 

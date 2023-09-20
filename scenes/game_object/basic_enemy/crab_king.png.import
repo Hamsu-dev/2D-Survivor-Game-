@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dy2t7kmmy3g16"
-path="res://.godot/imported/Hero.png-fb381a138f5ad4468b9c3c08f6b356ab.ctex"
+uid="uid://661wjevyefd6"
+path="res://.godot/imported/crab_king.png-efa911640ebfc3108a947a47f9ce6267.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/player/Hero.png"
-dest_files=["res://.godot/imported/Hero.png-fb381a138f5ad4468b9c3c08f6b356ab.ctex"]
+source_file="res://scenes/game_object/basic_enemy/crab_king.png"
+dest_files=["res://.godot/imported/crab_king.png-efa911640ebfc3108a947a47f9ce6267.ctex"]
 
 [params]
 

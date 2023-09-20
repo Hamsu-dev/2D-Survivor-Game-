@@ -1,0 +1,83 @@
+[gd_scene load_steps=9 format=3 uid="uid://chhdrrfomojgo"]
+
+[ext_resource type="Script" path="res://scenes/game_object/player/player.gd" id="1_fo1cx"]
+[ext_resource type="PackedScene" uid="uid://co1n6ldwi1id1" path="res://scenes/ability/sword_ability_controller/sword_ability_controller.tscn" id="2_dotq2"]
+[ext_resource type="Texture2D" uid="uid://7je67jk0b3ao" path="res://scenes/game_object/player/ChikBoy_run.png" id="3_jkq57"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rjfos"]
+radius = 32.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u8fvn"]
+radius = 5.0
+
+[sub_resource type="Animation" id="Animation_2vse7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_bfrtd"]
+resource_name = "running_left"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mfjsb"]
+_data = {
+"RESET": SubResource("Animation_2vse7"),
+"running_left": SubResource("Animation_bfrtd")
+}
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+collision_layer = 0
+motion_mode = 1
+script = ExtResource("1_fo1cx")
+
+[node name="AbilityManger" type="Node" parent="."]
+
+[node name="SwordAbilityController" parent="AbilityManger" instance=ExtResource("2_dotq2")]
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -13)
+shape = SubResource("CircleShape2D_rjfos")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -8)
+texture = ExtResource("3_jkq57")
+offset = Vector2(2.08165e-12, -8)
+vframes = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 0
+visibility_layer = 0
+position = Vector2(2.08165e-12, -5)
+shape = SubResource("CircleShape2D_u8fvn")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "running_left"
+libraries = {
+"": SubResource("AnimationLibrary_mfjsb")
+}

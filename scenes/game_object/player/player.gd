@@ -17,6 +17,11 @@ func _process(delta):
 	velocity = velocity.lerp(target_velocity, 1 - exp(-delta * ACCELERATION_SMOOTHING))
 	move_and_slide()
 
+	# Flip the sprite based on the movement direction
+	if direction.x < 0:
+		$Sprite2D.scale.x = -1.0
+	elif direction.x > 0:
+		$Sprite2D.scale.x = 1.0
 
 func get_movement_vector():
 	var x_movement =Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
