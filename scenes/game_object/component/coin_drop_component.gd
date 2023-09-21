@@ -18,9 +18,11 @@ func on_died():
 	if not owner is Node2D:
 		return
 	
+	var entities_layer = get_tree().get_first_node_in_group('entities_layer')
 	var spawn_position = (owner as Node2D).global_position
 	var coin_instance = coin_scene.instantiate() as Node2D
-	owner.get_parent().add_child(coin_instance)
+	
+	entities_layer.get_parent().add_child(coin_instance)
 	coin_instance.global_position = spawn_position
 
 
