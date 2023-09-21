@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://di7mi2w6hplfk"]
+[gd_scene load_steps=12 format=3 uid="uid://di7mi2w6hplfk"]
 
 [ext_resource type="Script" path="res://scenes/game_object/basic_enemy/basic_enemy.gd" id="1_y6y1e"]
 [ext_resource type="PackedScene" uid="uid://b7qdv3jurcm87" path="res://scenes/game_object/component/health_component.tscn" id="2_nf0lf"]
 [ext_resource type="PackedScene" uid="uid://dkd2ud3r0l1he" path="res://scenes/game_object/component/coin_drop_component.tscn" id="3_v0thx"]
 [ext_resource type="PackedScene" uid="uid://22d1tkk2l25k" path="res://scenes/game_object/component/hurtbox_component.tscn" id="4_7wgk6"]
-[ext_resource type="Texture2D" uid="uid://bvucb6ouuksa3" path="res://scenes/game_object/basic_enemy/SLime_sprite.png" id="5_b18ge"]
+[ext_resource type="Texture2D" uid="uid://c4tg8jss45hij" path="res://scenes/game_object/basic_enemy/Mimic-export.png" id="5_orlis"]
+[ext_resource type="Texture2D" uid="uid://blf1td4f4ay1u" path="res://scenes/game_object/basic_enemy/thirsty-Mimic-export.png" id="6_bmfn1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2216h"]
 radius = 2.5
@@ -17,36 +18,37 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0]
+"values": [ExtResource("5_orlis")]
 }
 
-[sub_resource type="Animation" id="Animation_ppcvg"]
+[sub_resource type="Animation" id="Animation_iw2ed"]
 resource_name = "default"
+length = 0.5
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 12.1257),
 "update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+"values": [ExtResource("5_orlis"), ExtResource("6_bmfn1")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wlg2i"]
 _data = {
 "RESET": SubResource("Animation_qvvo2"),
-"default": SubResource("Animation_ppcvg")
+"default": SubResource("Animation_iw2ed")
 }
 
 [node name="basic_enemy" type="CharacterBody2D" groups=["enemy"]]
@@ -69,9 +71,10 @@ scale = Vector2(4, 4)
 shape = SubResource("CircleShape2D_2216h")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("5_b18ge")
+position = Vector2(0, -15)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5_orlis")
 offset = Vector2(2.08165e-12, -4)
-hframes = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 8
