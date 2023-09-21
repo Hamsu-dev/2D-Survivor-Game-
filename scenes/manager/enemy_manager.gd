@@ -2,7 +2,8 @@ extends Node
 
 const SPAWN_RADIUS = 375
 
-@export var basic_enemy_scene : PackedScene
+@export var basic_enemy_scene: PackedScene
+@export var arena_time_manager: Node
 
 func _ready():
 	$Timer.timeout.connect(on_timer_timeout)
