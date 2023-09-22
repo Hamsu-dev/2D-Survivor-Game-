@@ -60,9 +60,13 @@ script = ExtResource("1_y6y1e")
 max_health = 5.0
 
 [node name="CoinDropComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("3_v0thx")]
+drop_percent = 1.0
 health_component = NodePath("../HealthComponent")
 
 [node name="HurtboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_7wgk6")]
+visible = false
+position = Vector2(0, -8)
+scale = Vector2(2, 2)
 health_component = NodePath("../HealthComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent"]
@@ -79,7 +83,8 @@ offset = Vector2(2.08165e-12, -4)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 8
 visibility_layer = 0
-position = Vector2(0, -4)
+position = Vector2(0, -16)
+scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_qonhk")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

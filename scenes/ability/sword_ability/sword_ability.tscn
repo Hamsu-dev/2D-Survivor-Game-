@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bujeiv2s588rd"]
+[gd_scene load_steps=9 format=3 uid="uid://bujeiv2s588rd"]
 
 [ext_resource type="Script" path="res://scenes/ability/sword_ability/sword_ability.gd" id="1_ihhkv"]
 [ext_resource type="PackedScene" uid="uid://dgc7kjqr0foni" path="res://scenes/game_object/component/hitbox_component.tscn" id="2_0perx"]
 [ext_resource type="Texture2D" uid="uid://bclhbri4b2eap" path="res://scenes/game_object/basic_enemy/sword_ice.png" id="2_y6ke3"]
+[ext_resource type="AudioStream" uid="uid://dewgijmf8punt" path="res://asset/audio/juicy-attack_sword_mixkit-sword-slash-swoosh-1476.mp3" id="4_o1wgt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v73b3"]
 size = Vector2(30, 30)
@@ -100,6 +101,21 @@ tracks/3/keys = {
 "update": 1,
 "values": [true, false, true]
 }
+tracks/4/type = "audio"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AudioStreamPlayer")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_o1wgt")
+}],
+"times": PackedFloat32Array(0.1)
+}
+tracks/4/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_78i70"]
 _data = {
@@ -129,3 +145,7 @@ autoplay = "swing"
 libraries = {
 "": SubResource("AnimationLibrary_78i70")
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_o1wgt")
+bus = &"sfx"

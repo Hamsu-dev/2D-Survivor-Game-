@@ -1,10 +1,48 @@
-[gd_scene load_steps=4 format=3 uid="uid://xrtjrjemvdd0"]
+[gd_scene load_steps=7 format=3 uid="uid://xrtjrjemvdd0"]
 
-[ext_resource type="Texture2D" uid="uid://c1gr44ed6hd7i" path="res://scenes/game_object/experience_coin/experience_coin.png" id="1_a12q1"]
 [ext_resource type="Script" path="res://scenes/game_object/experience_coin/experience_coin.gd" id="1_wr154"]
+[ext_resource type="Texture2D" uid="uid://ca72owc0w1w56" path="res://scenes/game_object/basic_enemy/Coin_Flip_Sprite.png" id="2_gkbsk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_f1u12"]
 radius = 16.0
+
+[sub_resource type="Animation" id="Animation_jg7wm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_3moye"]
+resource_name = "default"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xk3qx"]
+_data = {
+"RESET": SubResource("Animation_jg7wm"),
+"default": SubResource("Animation_3moye")
+}
 
 [node name="ExperienceCoin" type="Node2D"]
 script = ExtResource("1_wr154")
@@ -17,4 +55,12 @@ collision_mask = 16
 shape = SubResource("CircleShape2D_f1u12")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_a12q1")
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_gkbsk")
+hframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "default"
+libraries = {
+"": SubResource("AnimationLibrary_xk3qx")
+}
