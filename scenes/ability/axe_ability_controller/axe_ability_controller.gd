@@ -1,6 +1,5 @@
 extends Node
 
-
 @export var axe_ability_scene: PackedScene
 
 var damage = 10
